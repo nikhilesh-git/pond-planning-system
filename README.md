@@ -8,6 +8,7 @@ This repository contains a backend API route developed for the "Pond Planning" a
 - **Coordinate Projection**: Automatically estimates and projects WGS84 (Lat/Lon) to the correct UTM zone for accurate metric area calculations.
 - **DEM Generation**: Rasterizes scattered contour points into a 2m resolution Digital Elevation Model (DEM) using SciPy interpolation.
 - **Hydrological Routing**: Uses a D8 Flow Routing algorithm to trace water descent and accumulate flow into local depressions (sinks).
+- **Waterbody Avoidance Logic**: Includes edge-case checks to prevent placing ponds inside existing lakes or rivers (rejects sinks on grid boundaries or within massive flat regions).
 
 ## Tech Stack
 - **Python 3**
