@@ -2,7 +2,7 @@ import requests
 import sys
 
 def test_api():
-    url = "http://127.0.0.1:8000/analyzeContour"
+    url = "http://127.0.0.1:3000/analyzeContour"
     file_path = "contours_1m.kml"
     
     try:
