@@ -6,16 +6,26 @@ app = FastAPI(title="Pond Catchment Analysis API",
               description="API to analyze contour maps and estimate catchment area for pond planning.")
 
 @app.post("/analyzeContour")
-async def analyze_contour(file: UploadFile = File(...)):
-    if not file.filename.endswith(('.kml', '.kmz')):
+async def analyze_contour(
+    file: UploadFile = File(None),
+    contour_map: UploadFile = File(None)
+):
+    # Pick whichever field was provided
+    uploaded_file = file or contour_map
+    
+    if uploaded_file is None:
+        raise HTTPException(
+            status_code=422,
+            detail="File is required. Please upload using key 'file' or 'contour_map'."
+        )
+
+    if not uploaded_file.filename.endswith(('.kml', '.kmz')):
         raise HTTPException(status_code=400, detail="Only KML and KMZ files are supported.")
         
     try:
-        content = await file.read()
+        content = await uploaded_file.read()
         
-        # If KMZ, we would need to unzip and extract KML. For this assignment, 
-        # we'll assume KML is uploaded directly as per the contours.kml file.
-        if file.filename.endswith('.kmz'):
+        if uploaded_file.filename.endswith('.kmz'):
             import zipfile
             import io
             with zipfile.ZipFile(io.BytesIO(content)) as kmz:
