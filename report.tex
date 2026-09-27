@@ -39,7 +39,23 @@ Rural water conservation in semi-arid and agrarian regions of India heavily depe
 
 \maketitle
 
-%% =====================================================================
+%% =================== MANDATORY SUBMISSIONS BANNER ===================
+\begin{center}
+\noindent\fbox{%
+\begin{minipage}{0.96\linewidth}
+\vspace{1mm}
+\textbf{Required Submissions \& Project Access Links:}
+\begin{itemize}\setlength{\itemsep}{1pt}
+    \item \textbf{GitHub Repository URL:} \url{https://github.com/nikhilesh-git/pond-planning-system}
+    \item \textbf{Final Working Front-End URL:} \url{http://10.1.75.51:6253}
+    \item \textbf{Backend REST API \& Swagger Docs:} \url{http://10.1.75.51:3253/docs}
+    \item \textbf{Video Demonstration Link:} Public 5-minute video link explaining algorithms, working, and live demo
+\end{itemize}
+\vspace{1mm}
+\end{minipage}%
+}
+\end{center}
+\vspace{2mm}
 \section{Introduction}
 \label{sec:intro}
 Water scarcity remains one of the most pressing socio-economic challenges across rural India, particularly in agrarian states such as Chhattisgarh where agriculture accounts for over 70\% of local livelihood. In rainfed agro-ecosystems, erratic monsoon distributions lead to severe seasonal droughts interspersed with intense flash runoff. Decentralized rainwater harvesting through earthen village ponds (\textit{Pokhar} or \textit{Talab}) offers an ecologically sustainable solution to recharge groundwater aquifers, provide supplementary irrigation during dry spells, and support livestock. However, the efficacy of a rainwater harvesting pond depends critically on its spatial placement. A poorly situated pond with insufficient contributing catchment fails to fill, while a pond placed in high-energy river thalwegs is vulnerable to catastrophic embankment failure and rapid siltation. 
@@ -181,7 +197,7 @@ with an optimal excavation depth of $d = 3.5\text{ m}$ (comprising $0.5\text{ m}
 \label{sec:implementation}
 
 \subsection{Backend and API Design}
-The backend service is implemented in Python 3.12 utilizing FastAPI and Uvicorn. All endpoints conform strictly to RESTful design conventions and return structured JSON schemas. Table~\ref{tab:api-endpoints} details the exposed REST interface.
+The backend service is implemented in Python 3.12 utilizing FastAPI and Uvicorn. All endpoints conform strictly to RESTful design conventions and return structured JSON schemas. The complete codebase is publicly hosted on GitHub at \url{https://github.com/nikhilesh-git/pond-planning-system}. Table~\ref{tab:api-endpoints} details the exposed REST interface.
 
 \begin{table}[h]
   \caption{AquaPlan AI REST API Endpoints}
